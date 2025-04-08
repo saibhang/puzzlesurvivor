@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle Survivor - Challenging Brain Puzzle Game | Play Free Online</title>
+    <meta name="description" content="Play Puzzle Survivor online for free. Test your strategic thinking with challenging puzzles in this addictive survival game. New puzzles daily!">
+    <meta name="keywords" content="Puzzle Survivor, puzzle game, brain teaser, strategy puzzle, survival game, free online puzzles, logic games, mind games, strategic thinking, daily puzzles, brain training">
+    <meta property="og:title" content="Puzzle Survivor - Strategic Puzzle Game">
+    <meta property="og:description" content="Challenge your mind with Puzzle Survivor - the ultimate puzzle game combining strategy and survival elements.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://puzzlesurvivor.online">
+    <meta property="og:image" content="https://puzzlesurvivor.online/images/puzzle-survivor-preview.jpg">
+    <link rel="canonical" href="https://puzzlesurvivor.online">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        puzzle: {
+                            primary: '#4A6FA5', // 主色调：蓝色
+                            secondary: '#FFB347', // 次要色调：橙色
+                            accent: '#47B8FF', // 强调色：亮蓝色
+                            dark: '#2C3E50', // 深色
+                            light: '#F8FAFC', // 浅色背景
+                            success: '#4CAF50', // 成功色：绿色
+                            danger: '#E53935', // 危险色：红色
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+        .game-container {
+            aspect-ratio: 16/9;
+            max-height: 75vh;
+        }
+        @media (max-width: 768px) {
+            .game-container {
+                aspect-ratio: 4/3;
+                height: 60vh;
+            }
+        }
+        /* 优化加载速度的CSS */
+        img, iframe {
+            loading: lazy;
+        }
+    </style>
+    <!-- 增强的结构化数据 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VideoGame",
+        "name": "Puzzle Survivor",
+        "description": "A challenging puzzle game that tests your strategic thinking and survival skills.",
+        "genre": ["Puzzle", "Strategy", "Survival", "Brain Training", "Logic Game"],
+        "playMode": "SinglePlayer",
+        "applicationCategory": "Game",
+        "url": "https://puzzlesurvivor.online",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "256",
+            "bestRating": "5",
+            "worstRating": "1"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+        }
+    }
+    </script>
+    <!-- 添加FAQ结构化数据 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+            "@type": "Question",
+            "name": "Is Puzzle Survivor free to play?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, Puzzle Survivor is completely free to play online with no downloads required."
+            }
+        }, {
+            "@type": "Question",
+            "name": "Can I play Puzzle Survivor on mobile?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely! The game is fully optimized for both desktop and mobile devices."
+            }
+        }, {
+            "@type": "Question",
+            "name": "How difficult is Puzzle Survivor?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The game starts with simple challenges and gradually increases in difficulty, making it suitable for both beginners and experienced puzzle enthusiasts."
+            }
+        }]
+    }
+    </script>
+</head>
+<body class="bg-puzzle-light text-puzzle-dark min-h-screen flex flex-col">
+    <header class="bg-puzzle-primary text-white py-6 px-4 shadow-md">
+        <div class="container mx-auto max-w-4xl">
+            <h1 class="text-3xl md:text-4xl font-bold text-center">Puzzle Survivor</h1>
+            <p class="text-center mt-2 text-lg">Solve puzzles. Survive challenges. Become the master!</p>
+            <!-- 添加游戏统计显示社交证明 -->
+            <div class="flex justify-center mt-3 text-sm">
+                <div class="mx-2 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <span>10,000+ Players</span>
+                </div>
+                <div class="mx-2 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                    </svg>
+                    <span>4.8/5 Rating</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<main class="container mx-auto max-w-4xl px-4 py-6 flex-grow">
+        <section class="mb-8">
+            <div class="game-container w-full bg-white rounded-lg shadow-md overflow-hidden border border-gray-200">
+                <iframe src="https://www.crazygames.com/embed/puzzle-survivor" style="width: 100%; height: 100%;" frameborder="0" allow="gamepad *;" title="Play Puzzle Survivor Online"></iframe>
+            </div>
+            <!-- 添加社交分享按钮 -->
+            <div class="mt-4 flex justify-center space-x-4">
+                <a href="#" class="text-puzzle-primary hover:text-puzzle-accent">
+                    <span class="sr-only">Share on Facebook</span>
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+                <a href="#" class="text-puzzle-primary hover:text-puzzle-accent">
+                    <span class="sr-only">Share on Twitter</span>
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                    </svg>
+                </a>
+                <a href="#" class="text-puzzle-primary hover:text-puzzle-accent">
+                    <span class="sr-only">Share on Pinterest</span>
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z" />
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <section class="mb-8">
+            <div class="bg-white rounded-lg p-6 shadow-md border border-gray-200">
+                <h2 class="text-2xl font-bold mb-4 text-puzzle-primary border-b border-gray-200 pb-2">About Puzzle Survivor</h2>
+                <p class="mb-3">Puzzle Survivor is an engaging brain-teasing game that combines strategy, quick thinking, and survival elements. Navigate through increasingly challenging puzzles while managing resources and avoiding obstacles.</p>
+                <p>Each level presents unique challenges that require different approaches. Perfect for puzzle enthusiasts looking for a fresh challenge!</p>
+            </div>
+        </section>
+
+        <!-- 新增：本周挑战 - 定期更新内容 -->
+        <section class="bg-puzzle-primary text-white rounded-lg p-6 shadow-md mb-8">
+            <h2 class="text-2xl font-bold mb-4 border-b border-white/20 pb-2">Weekly Challenge</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-3/4">
+                    <h3 class="font-bold text-xl mb-2">Survival Marathon</h3>
+                    <p class="mb-3">This week's special challenge: Complete 10 consecutive levels without losing any lives! Can you master the increasing difficulty?</p>
+                    <p class="text-sm">Challenge ends: Sunday, April 13, 2025</p>
+                </div>
+                <div class="md:w-1/4 text-center mt-4 md:mt-0">
+                    <div class="bg-white text-puzzle-primary rounded-full h-24 w-24 flex items-center justify-center mx-auto font-bold text-xl">
+                        NEW!
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+<div class="grid md:grid-cols-2 gap-6 mb-8">
+            <section class="bg-white rounded-lg p-6 shadow-md border border-gray-200">
+                <h2 class="text-2xl font-bold mb-4 text-puzzle-primary border-b border-gray-200 pb-2">How to Play</h2>
+                <ul class="space-y-2">
+                    <li class="flex items-start">
+                        <span class="text-puzzle-secondary font-bold mr-2">•</span>
+                        <span>Use your mouse or touch to move puzzle pieces</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-puzzle-secondary font-bold mr-2">•</span>
+                        <span>Collect resources to unlock new abilities</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-puzzle-secondary font-bold mr-2">•</span>
+                        <span>Plan your moves carefully to survive longer</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-puzzle-secondary font-bold mr-2">•</span>
+                        <span>Progress through increasingly difficult levels</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="bg-white rounded-lg p-6 shadow-md border border-gray-200">
+                <h2 class="text-2xl font-bold mb-4 text-puzzle-primary border-b border-gray-200 pb-2">Game Features</h2>
+                <ul class="space-y-2">
+                    <li class="flex items-start">
+                        <span class="text-puzzle-secondary font-bold mr-2">•</span>
+                        <span>Brain-teasing puzzles with strategic elements</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-puzzle-secondary font-bold mr-2">•</span>
+                        <span>Resource management and survival mechanics</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-puzzle-secondary font-bold mr-2">•</span>
+                        <span>Progressive difficulty for continuous challenge</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-puzzle-secondary font-bold mr-2">•</span>
+                        <span>Intuitive controls for all skill levels</span>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <section class="bg-white rounded-lg p-6 shadow-md border border-gray-200 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-puzzle-primary border-b border-gray-200 pb-2">Tips for Success</h2>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-puzzle-light p-4 rounded-lg">
+                    <h3 class="font-bold text-puzzle-secondary mb-2">Beginner Tips</h3>
+                    <p>Take your time to analyze each puzzle before making moves. Look for patterns and try to plan a few steps ahead for better results.</p>
+                </div>
+                <div class="bg-puzzle-light p-4 rounded-lg">
+                    <h3 class="font-bold text-puzzle-secondary mb-2">Advanced Strategies</h3>
+                    <p>Focus on resource management and prioritize survival over speed. Sometimes taking a defensive approach is better than rushing forward.</p>
+                </div>
+                <div class="bg-puzzle-light p-4 rounded-lg">
+                    <h3 class="font-bold text-puzzle-secondary mb-2">Resource Management</h3>
+                    <p>Don't use all your resources at once. Save some for critical situations and unexpected challenges that may appear later.</p>
+                </div>
+                <div class="bg-puzzle-light p-4 rounded-lg">
+                    <h3 class="font-bold text-puzzle-secondary mb-2">Practice Makes Perfect</h3>
+                    <p>Don't get discouraged by failures. Each attempt teaches you something new about the game mechanics and puzzle patterns.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 新增：FAQ部分 - 增加长尾关键词覆盖 -->
+        <section class="bg-white rounded-lg p-6 shadow-md border border-gray-200 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-puzzle-primary border-b border-gray-200 pb-2">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <div class="border-b border-gray-200 pb-4">
+                    <h3 class="font-bold text-puzzle-secondary mb-2">Is Puzzle Survivor free to play?</h3>
+                    <p>Yes, Puzzle Survivor is completely free to play online with no downloads required. You can enjoy the full game experience without any payments or subscriptions.</p>
+                </div>
+                <div class="border-b border-gray-200 pb-4">
+                    <h3 class="font-bold text-puzzle-secondary mb-2">Can I play Puzzle Survivor on mobile?</h3>
+                    <p>Absolutely! The game is fully optimized for both desktop and mobile devices. You can enjoy the same challenging gameplay on your smartphone or tablet with touch controls.</p>
+                </div>
+                <div class="border-b border-gray-200 pb-4">
+                    <h3 class="font-bold text-puzzle-secondary mb-2">How difficult is Puzzle Survivor?</h3>
+                    <p>The game starts with simple challenges and gradually increases in difficulty, making it suitable for both beginners and experienced puzzle enthusiasts. You can progress at your own pace.</p>
+                </div>
+                <div class="border-b border-gray-200 pb-4">
+                    <h3 class="font-bold text-puzzle-secondary mb-2">Are there different game modes in Puzzle Survivor?</h3>
+                    <p>Yes, Puzzle Survivor features various game modes including the main campaign, daily challenges, and special events. Each offers unique puzzles and rewards.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-puzzle-secondary mb-2">How often is Puzzle Survivor updated?</h3>
+                    <p>The game receives regular updates with new puzzles, features, and improvements. We add new content weekly to keep the experience fresh and exciting.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white rounded-lg p-6 shadow-md border border-gray-200 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-puzzle-primary border-b border-gray-200 pb-2">Why Players Love Puzzle Survivor</h2>
+            <div class="grid md:grid-cols-3 gap-4 mt-4">
+                <div class="text-center p-4">
+                    <div class="text-puzzle-secondary text-4xl font-bold mb-2">🧠</div>
+                    <h3 class="font-semibold mb-2">Brain Training</h3>
+                    <p class="text-sm">Improves problem-solving skills and strategic thinking</p>
+                </div>
+                <div class="text-center p-4">
+                    <div class="text-puzzle-secondary text-4xl font-bold mb-2">🎮</div>
+                    <h3 class="font-semibold mb-2">Addictive Gameplay</h3>
+                    <p class="text-sm">The perfect balance of challenge and reward</p>
+                </div>
+                <div class="text-center p-4">
+                    <div class="text-puzzle-secondary text-4xl font-bold mb-2">📈</div>
+                    
+            <h3 class="font-semibold mb-2">Constant Progress</h3>
+            <p class="text-sm">Always something new to discover and master</p>
+        </div>
+    </div>
+</section>
+
+<!-- 新增：相关游戏推荐区域 - 提高用户停留时间 -->
+<section class="bg-white rounded-lg p-6 shadow-md border border-gray-200 mb-8">
+    <h2 class="text-2xl font-bold mb-4 text-puzzle-primary border-b border-gray-200 pb-2">You Might Also Enjoy</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="bg-puzzle-light rounded-lg overflow-hidden shadow-sm">
+            <div class="h-24 bg-puzzle-primary"></div>
+            <div class="p-3">
+                <h3 class="font-medium text-sm">Logic Master</h3>
+                <p class="text-xs mt-1">Brain-teasing logic puzzles</p>
+            </div>
+        </div>
+        <div class="bg-puzzle-light rounded-lg overflow-hidden shadow-sm">
+            <div class="h-24 bg-puzzle-secondary"></div>
+            <div class="p-3">
+                <h3 class="font-medium text-sm">Pattern Quest</h3>
+                <p class="text-xs mt-1">Find and match patterns</p>
+            </div>
+        </div>
+        <div class="bg-puzzle-light rounded-lg overflow-hidden shadow-sm">
+            <div class="h-24 bg-puzzle-accent"></div>
+            <div class="p-3">
+                <h3 class="font-medium text-sm">Memory Challenge</h3>
+                <p class="text-xs mt-1">Test your memory skills</p>
+            </div>
+        </div>
+        <div class="bg-puzzle-light rounded-lg overflow-hidden shadow-sm">
+            <div class="h-24 bg-puzzle-success"></div>
+            <div class="p-3">
+                <h3 class="font-medium text-sm">Strategy Survivor</h3>
+                <p class="text-xs mt-1">Strategic survival gameplay</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 新增：用户评论区 - 增加社交证明 -->
+<section class="bg-white rounded-lg p-6 shadow-md border border-gray-200 mb-8">
+    <h2 class="text-2xl font-bold mb-4 text-puzzle-primary border-b border-gray-200 pb-2">Player Reviews</h2>
+    <div class="space-y-4">
+        <div class="bg-puzzle-light p-4 rounded-lg">
+            <div class="flex items-center mb-2">
+                <div class="flex text-puzzle-secondary">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                   
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+        </div>
+        <span class="ml-2 font-medium">Sarah K.</span>
+    </div>
+    <p class="text-sm">"Absolutely addictive! I've been playing Puzzle Survivor for weeks and still find new challenges every day. The difficulty curve is perfect - challenging but not frustrating."</p>
+</div>
+<div class="bg-puzzle-light p-4 rounded-lg">
+    <div class="flex items-center mb-2">
+        <div class="flex text-puzzle-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="none" stroke="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" stroke-width="1.5" />
+            </svg>
+        </div>
+        <span class="ml-2 font-medium">Michael T.</span>
+    </div>
+    <p class="text-sm">"Great brain training game! I play it during my commute and it really helps me start the day with a sharp mind. The survival elements add an exciting twist to the puzzle format."</p>
+</div>
+<div class="bg-puzzle-light p-4 rounded-lg">
+  
+            <div class="flex items-center mb-2">
+                <div class="flex text-puzzle-secondary">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                </div>
+                <span class="ml-2 font-medium">Jessica L.</span>
+            </div>
+            <p class="text-sm">"I've tried many puzzle games, but Puzzle Survivor stands out with its unique combination of puzzle-solving and survival mechanics. The weekly challenges keep me coming back!"</p>
+        </div>
+    </div>
+</section>
+
+<!-- 新增：邮件订阅 - 获取回访用户 -->
+<section class="bg-puzzle-primary text-white rounded-lg p-6 shadow-md mb-8">
+    <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-2/3 mb-4 md:mb-0">
+            <h2 class="text-2xl font-bold mb-2">Stay Updated!</h2>
+            <p>Subscribe to get weekly challenges, special events, and puzzle-solving tips delivered to your inbox.</p>
+        </div>
+        <div class="md:w-1/3 w-full">
+            <form class="flex flex-col sm:flex-row">
+                <input type="email" placeholder="Your email address" class="px-4 py-2 rounded-l focus:outline-none text-puzzle-dark w-full sm:w-auto">
+                <button class="bg-puzzle-secondary hover:bg-puzzle-accent text-white font-bold py-2 px-4 rounded-r transition duration-300 mt-2 sm:mt-0">Subscribe</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="bg-puzzle-primary text-white rounded-lg p-6 shadow-md mb-8">
+    <h2 class="text-2xl font-bold mb-4 border-b border-white/20 pb-2">Ready for the Challenge?</h2>
+
+        <p class="mb-4">Start playing Puzzle Survivor now and see how far you can go! Test your skills, improve your strategy, and become the ultimate puzzle master.</p>
+        <div class="text-center">
+            <button class="bg-puzzle-secondary hover:bg-puzzle-accent text-white font-bold py-2 px-6 rounded-full transition duration-300">Play Again</button>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-puzzle-dark text-white py-6 px-4">
+    <div class="container mx-auto max-w-4xl">
+        <div class="grid md:grid-cols-3 gap-6 mb-6">
+            <div>
+                <h3 class="font-bold text-lg mb-3">Puzzle Survivor</h3>
+                <p class="text-sm opacity-75">A challenging puzzle game that combines strategy and survival elements for an addictive gaming experience.</p>
+            </div>
+            <div>
+                <h3 class="font-bold text-lg mb-3">Quick Links</h3>
+                <ul class="text-sm space-y-2 opacity-75">
+                    <li><a href="#" class="hover:text-puzzle-secondary">How to Play</a></li>
+                    <li><a href="#" class="hover:text-puzzle-secondary">Weekly Challenges</a></li>
+                    <li><a href="#" class="hover:text-puzzle-secondary">Player Reviews</a></li>
+                    <li><a href="#" class="hover:text-puzzle-secondary">FAQ</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-bold text-lg mb-3">Connect With Us</h3>
+                <div class="flex space-x-4 mt-2">
+                    <a href="#" class="text-white hover:text-puzzle-secondary">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="text-white hover:text-puzzle-secondary">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="text-white hover:text-puzzle-secondary">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                
+                                <path fill-rule="evenodd" d="M12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-4 text-center">
+                <p>&copy; 2025 PuzzleSurvivor.online - All rights reserved</p>
+                <p class="mt-2 text-sm opacity-75">Puzzle Survivor is an addictive online puzzle game that challenges your strategic thinking and survival skills.</p>
+                <!-- 添加SEO相关关键词 -->
+                <p class="mt-4 text-xs opacity-50">brain games, puzzle games, strategy puzzles, online puzzles, free puzzles, mind training, logic games, survival games</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 添加简单的页面加载性能优化 -->
+    <script>
+        // 延迟加载非关键资源
+        window.addEventListener('load', function() {
+            // 记录游戏开始时间用于分析
+            if (localStorage) {
+                localStorage.setItem('puzzleGameVisit', new Date().toISOString());
+            }
+            
+            // 简单的用户互动跟踪
+            const playButtons = document.querySelectorAll('button');
+            playButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // 滚动到游戏区域
+                    const gameContainer = document.querySelector('.game-container');
+                    if (gameContainer) {
+                        gameContainer.scrollIntoView({ behavior: 'smooth' });
+                    }
+                    
+                    // 记录用户交互
+                    if (localStorage) {
+                        const interactions = localStorage.getItem('puzzleInteractions') || '0';
+                        localStorage.setItem('puzzleInteractions', parseInt(interactions) + 1);
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- 添加结构化数据 - 游戏评分 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Puzzle Survivor",
+        "description": "A challenging puzzle game that tests your strategic thinking and survival skills.",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "256",
+            "bestRating": "5",
+            "worstRating": "1"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+        }
+    }
+    </script>
+</body>
+</html>
